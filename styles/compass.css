@@ -27,11 +27,11 @@
 	fill: red;
 }
 
-#angle {
+#angle_text {
 	font-size: 50px;
 	transform: translateX(9px);
 }
 
-#direction {
+#direction_text {
 	font-size: 20px;
 }
