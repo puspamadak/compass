@@ -82,12 +82,8 @@ body[data-theme="dark"] #info_content {
 }
 
 @keyframes load-anim {
-	from {
-		transform: scale(1);
-	}
-	to {
-		transform: scale(.5);
-	}
+	from { transform: scale(1); }
+	to { transform: scale(.5); }
 }
 
 #button_bar {
@@ -116,14 +112,13 @@ body[data-theme="dark"] #info_content {
 	margin-right: 10px;
 }
 
-#info_btn {
-	background-image: url(icons/info.svg);
+button {
+	color: var(--color-fg);
 }
 
-#theme_btn {
-	background-image: url(icons/day.svg);
-}
-
-body[data-theme="dark"] #theme_btn {
-	background-image: url(icons/night.svg);
+button svg {
+	width: 100%;
+	height: 100%;
+	fill: currentColor;
+	stroke: currentColor;
 }

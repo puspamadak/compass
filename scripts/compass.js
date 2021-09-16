@@ -35,8 +35,6 @@ function createDirections() {
 		direction_texts_group.appendChild(text);
 	}
 }
-createMarks();
-createDirections();
 
 function rotateDial(angle) {
 	dial.style.transform = `rotate(${angle}deg)`;
@@ -44,17 +42,26 @@ function rotateDial(angle) {
 
 function checkSupport(e) {
 	if (e.alpha != null && e.alpha != undefined) {
+		//Sensor present
+		createMarks();
+		createDirections();
 		overlay.style.display = "none";
 		compass.style.display = "initial";
-		window.addEventListener("deviceorientationabsolute", measure);
+		startMeasure();
 		window.removeEventListener("deviceorientationabsolute", checkSupport);
 	} else overlay.innerHTML = "Your device does not have a magnetic sensor!";
 }
 function measure(e) {
 	var angle = e.alpha ?? 0;
 	rotateDial(angle);
-	angle.innerHTML = `${angle}&deg;`;
-	let half_angle = angle + 22.5;
-	direction.innerHTML = direction_labels[1][parseInt(half_angle > 360 ? 0 : half_angle / 45)];
+	angle_text.innerHTML = `${angle}&deg;`;
+	let half_angle = 382.5 - angle;
+	direction_text.innerHTML = direction_labels[1][parseInt(half_angle > 360 ? 0 : half_angle / 45)];
+}
+function pauseMeasure() {
+	window.removeEventListener("deviceorientationabsolute", measure);
+}
+function startMeasure() {
+	window.addEventListener("deviceorientationabsolute", measure);
 }
 window.addEventListener("deviceorientationabsolute", checkSupport);

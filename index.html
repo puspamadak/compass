@@ -18,8 +18,12 @@
 
 <body data-theme="light">
 	<div id="button_bar">
-		<button id="info_btn" onclick="showInfo()"></button>
-		<button id="theme_btn" onclick="toggleTheme()"></button>
+		<button id="info_btn" onclick="showInfo()">
+			<svg><use href="icons/info.svg#content"/></svg>
+		</button>
+		<button id="theme_btn" onclick="toggleTheme()">
+			<svg><use href="icons/dark.svg#content"/></svg>
+		</button>
 	</div>
 	<svg id="compass" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 300">
 		<defs>
@@ -37,8 +41,8 @@
 		</g>
 
 		<polyline id="pointer" points="150,90 180,120 120,120" />
-		<text id="angle" x="150" y="150" text-anchor="middle" alignment-baseline="middle"></text>
-		<text id="direction" x="150" y="190" text-anchor="middle"></text>
+		<text id="angle_text" x="150" y="150" text-anchor="middle" alignment-baseline="middle"></text>
+		<text id="direction_text" x="150" y="190" text-anchor="middle"></text>
 	</svg>
 
 	<div id="overlay">
