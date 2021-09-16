@@ -13,6 +13,9 @@
 
 #angle_texts_group text {
 	font-size: 10px;
+}
+
+#compass text {
 	fill: var(--color-fg);
 }
 
