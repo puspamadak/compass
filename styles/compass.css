@@ -28,10 +28,10 @@
 }
 
 #angle {
-	font-size: 50;
+	font-size: 50px;
 	transform: translateX(9px);
 }
 
 #direction {
-	font-size: 20;
+	font-size: 20px;
 }

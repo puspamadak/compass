@@ -58,6 +58,7 @@ body[data-theme="dark"] {
 	box-shadow: 0 5px 20px #0006;
 	max-width: 80vw;
 	max-height: 80vh;
+	overflow-y: auto;
 }
 
 body[data-theme="dark"] #info_content {
