@@ -21,7 +21,6 @@
 
 #direction_texts_group text {
 	font-size: 15px;
-	fill: var(--color-fg);
 }
 
 #pointer {
