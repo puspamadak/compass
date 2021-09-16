@@ -52,7 +52,7 @@ function checkSupport(e) {
 	} else overlay.innerHTML = "Your device does not have a magnetic sensor!";
 }
 function measure(e) {
-	var angle = e.alpha ?? 0;
+	var angle = Math.round(e.alpha * 10) / 10 ?? 0;
 	rotateDial(angle);
 	angle_text.innerHTML = `${angle}&deg;`;
 	let half_angle = 382.5 - angle;
