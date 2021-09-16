@@ -1,0 +1,23 @@
+#buttons_row {
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+#buttons_row>button {
+	font-weight: bold;
+	font-size: 1.2em;
+	background: none;
+	border: none;
+	color: currentColor;
+	cursor: pointer;
+}
+
+#title {
+	text-decoration: underline;
+}
+
+a {
+	color: var(--color-link);
+}

@@ -1,0 +1,35 @@
+#major_marks_group line,
+#minor_marks_group line,
+#angle_texts_group text,
+#direction_texts_group text,
+#dial {
+	transform-origin: center;
+}
+
+#major_marks_group line,
+#minor_marks_group line {
+	stroke: var(--color-fg);
+}
+
+#angle_texts_group text {
+	font-size: 10px;
+	fill: var(--color-fg);
+}
+
+#direction_texts_group text {
+	font-size: 15px;
+	fill: var(--color-fg);
+}
+
+#pointer {
+	fill: red;
+}
+
+#angle {
+	font-size: 50;
+	transform: translateX(9px);
+}
+
+#direction {
+	font-size: 20;
+}

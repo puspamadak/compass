@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="theme-color" content="#fbfbfb">
+
+	<link rel="icon" href="icons/logo-app.svg">
+	<link rel="apple-touch-icon" href="icons/logo-app.svg">
+	<link rel="stylesheet" href="styles/main.css" />
+	<link rel="stylesheet" href="styles/compass.css" />
+	<script src="scripts/main.js" defer></script>
+	<script src="scripts/compass.js" defer></script>
+	<title>Compass</title>
+</head>
+
+<body data-theme="light">
+	<div id="button_bar">
+		<button id="info_btn" onclick="showInfo()"></button>
+		<button id="theme_btn" onclick="toggleTheme()"></button>
+	</div>
+	<svg id="compass" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 300">
+		<defs>
+			<line id="major_mark_template" x1="150" y1="15" x2="150" y2="30" />
+			<line id="minor_mark_template" x1="150" y1="20" x2="150" y2="30" />
+			<text id="angle_text_template" x="150" y="12" text-anchor="middle"></text>
+			<text id="direction_text_template" x="150" y="47" text-anchor="middle"></text>
+		</defs>
+
+		<g id="dial">
+			<g id="major_marks_group"></g>
+			<g id="minor_marks_group"></g>
+			<g id="angle_texts_group"></g>
+			<g id="direction_texts_group"></g>
+		</g>
+
+		<polyline id="pointer" points="150,90 180,120 120,120" />
+		<text id="angle" x="150" y="150" text-anchor="middle" alignment-baseline="middle"></text>
+		<text id="direction" x="150" y="190" text-anchor="middle"></text>
+	</svg>
+
+	<div id="overlay">
+		Checking your device...
+	</div>
+
+	<div id="info">
+		<div id="info_content">
+			<div class="loader">
+				<div style="--anim-delay:0s;"></div>
+				<div style="--anim-delay:.2s;"></div>
+				<div style="--anim-delay:.5s;"></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
