@@ -1,0 +1,118 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	font-style: inherit;
+	font-family: inherit;
+	color: inherit;
+}
+
+::selection {
+	background: var(--color-primary);
+	color: var(--color-on-primary);
+}
+
+:focus {
+	outline: none;
+}
+
+:not(:defined) {
+	display: none;
+}
+
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+}
+
+body {
+	--bg: #fff;
+	--fg: #313131;
+	--color-link: #006eff;
+	background-color: var(--bg);
+	color: var(--fg);
+	min-height: 100%;
+}
+
+a {
+	display: inline-block;
+	color: inherit;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul,
+ol {
+	list-style-position: inside;
+}
+
+button,
+label {
+	cursor: pointer;
+}
+
+button,
+label,
+input,
+textarea,
+select {
+	font-size: inherit;
+}
+
+.row {
+	display: flex;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+}
+
+.grow {
+	flex-grow: 1;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.aic {
+	align-items: center;
+}
+
+.jcc {
+	justify-content: center;
+}
+
+.air {
+	align-items: flex-end;
+}
+
+.jcr {
+	justify-content: flex-end;
+}
+
+.tc {
+	text-align: center;
+}
+
+:disabled {
+	cursor: not-allowed;
+}
+
+.no-scrollbar {
+	scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}

@@ -1,0 +1,44 @@
+button:focus,
+a:focus,
+label:focus-within {
+	outline: var(--o-width, 1px) dashed;
+	outline-offset: var(--o-off, 2px);
+}
+
+.link {
+	--c: var(--color-link);
+	color: var(--c);
+}
+
+.link:is(:hover, :focus, :focus-within) {
+	text-decoration: underline;
+	color: var(--c);
+}
+
+img {
+	display: block;
+	object-fit: contain;
+}
+
+svg {
+	width: 0;
+	height: 0;
+}
+
+p {
+	line-height: 1.4;
+}
+
+.btn-row {
+	display: flex;
+	gap: .5em 1em;
+	flex-wrap: wrap;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}

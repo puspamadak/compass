@@ -1,0 +1,19 @@
+.dialog-cont {
+	background-color: #0006;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+}
+
+.dialog {
+	background-color: var(--bg);
+	border-radius: 10px;
+	box-shadow: 0 10px 20px #0004;
+	max-width: calc(100% - 20px);
+	max-height: calc(100% - 20px);
+}
+
+.dialog-cont.open {
+	display: flex;
+}
