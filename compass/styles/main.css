@@ -1,0 +1,76 @@
+body {
+	padding: 20px;
+}
+
+body[data-theme="dark"] {
+	--bg: #212121;
+	--fg: #eee;
+}
+
+#compass {
+	max-height: 100%;
+	max-width: 100%;
+	display: none;
+}
+
+#info_dialog {
+	padding: 30px;
+	border-radius: 20px;
+	overflow-y: auto;
+}
+
+#info_dialog .loader {
+	display: flex;
+	gap: 10px;
+}
+
+#info_dialog .loader div {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: var(--fg);
+	opacity: .4;
+	animation: load-anim .6s linear var(--anim-delay) infinite alternate;
+}
+
+@keyframes load-anim {
+	from {
+		transform: scale(1);
+	}
+
+	to {
+		transform: scale(.5);
+	}
+}
+
+#button_bar {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	gap: 15px;
+	z-index: 100;
+}
+
+#button_bar button {
+	width: 3em;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	transition: transform .2s;
+}
+
+#button_bar button:is(:hover, :focus) {
+	transform: scale(1.1);
+}
+
+button i-con {
+	font-size: 2em;
+}
+
+.msg {
+	font-size: 3em;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
