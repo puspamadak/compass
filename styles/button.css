@@ -1,0 +1,72 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    text-align: center;
+    --pad-h: 1.2em;
+    --pad-v: .6em;
+    padding: var(--pad-v) var(--pad-h);
+    --br: .4em;
+    border-radius: var(--br);
+    background-color: var(--main-color);
+    color: var(--over-main);
+    --o-off: -3px;
+}
+
+.btn>* {
+    flex-shrink: 0;
+}
+
+.btn.hollow {
+    background-color: unset;
+    --bw: 2px;
+    border: var(--bw) solid var(--main-color);
+    padding: calc(var(--pad-v) - var(--bw)) calc(var(--pad-h) - var(--bw));
+    --main-color: currentColor;
+    color: var(--main-color);
+    --o-off: -5px;
+}
+
+.btn.primary {
+    --main-color: var(--color-primary);
+    --over-main: var(--color-on-primary);
+}
+
+.btn.primary::selection {
+    --main-color: var(--color-on-primary);
+    --over-main: var(--color-primary);
+}
+
+.btn.success {
+    --main-color: green;
+    --over-main: var(--color-on-primary);
+}
+
+.btn.error {
+    --main-color: red;
+    --over-main: var(--color-on-primary);
+}
+
+.btn:disabled {
+    opacity: .7;
+}
+
+.btn.t {
+    position: relative;
+}
+
+.btn.t::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--br);
+    transition: background-color .2s;
+}
+
+.btn.t:is(:hover, :focus)::before {
+    background-color: var(--highlight, #0001);
+}

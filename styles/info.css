@@ -1,23 +1,22 @@
-#buttons_row {
-	margin-top: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
+#info_dialog {
+	line-height: 1.5;
 }
 
-#buttons_row>button {
-	font-weight: bold;
-	font-size: 1.2em;
-	background: none;
-	border: none;
-	color: currentColor;
-	cursor: pointer;
+#info_dialog .btn-row {
+	margin-top: 15px;
 }
 
-#title {
+#info_dialog .title {
 	text-decoration: underline;
+	margin-bottom: 15px;
 }
 
-a {
-	color: var(--color-link);
+#info_dialog ul {
+	list-style-type: disc;
+	margin-left: .5em;
+}
+
+#info_dialog i-con {
+	display: inline-block;
+	vertical-align: middle;
 }

@@ -1,28 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="theme-color" content="#fbfbfb">
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="theme-color" content="#fbfbfb" />
+	<link rel="icon" href="icons/logo-app.svg" />
+	<link rel="apple-touch-icon" href="icons/logo-app.svg" />
 
-	<link rel="icon" href="icons/logo-app.svg">
-	<link rel="apple-touch-icon" href="icons/logo-app.svg">
+	<link rel="stylesheet" href="styles/defaults.css" />
+	<link rel="stylesheet" href="styles/widgets.css" />
+	<link rel="stylesheet" href="styles/button.css" />
 	<link rel="stylesheet" href="styles/main.css" />
 	<link rel="stylesheet" href="styles/compass.css" />
-	<script src="scripts/main.js" defer></script>
+	<script src="scripts/icon.js" type="module"></script>
+	<script src="scripts/main.js" type="module"></script>
 	<script src="scripts/compass.js" defer></script>
 	<title>Compass</title>
 </head>
 
-<body data-theme="light">
-	<div id="button_bar">
-		<button id="info_btn" onclick="showInfo()">
-			<svg><use href="icons/info.svg#content"/></svg>
+<body data-theme="light" class="col aic jcc">
+	<div id="button_bar" class="btn-row jcr">
+		<button class="btn hollow" id="info_btn" onclick="showInfo()">
+			<i-con file="info"></i-con>
 		</button>
-		<button id="theme_btn" onclick="toggleTheme()">
-			<svg><use href="icons/dark.svg#content"/></svg>
+		<button class="btn hollow" id="theme_btn" onclick="toggleTheme()">
+			<i-con></i-con>
 		</button>
 	</div>
 	<svg id="compass" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 300">
@@ -32,29 +37,27 @@
 			<text id="angle_text_template" x="150" y="12" text-anchor="middle"></text>
 			<text id="direction_text_template" x="150" y="47" text-anchor="middle"></text>
 		</defs>
-
 		<g id="dial">
 			<g id="major_marks_group"></g>
 			<g id="minor_marks_group"></g>
 			<g id="angle_texts_group"></g>
 			<g id="direction_texts_group"></g>
 		</g>
-
 		<polyline id="pointer" points="150,90 180,120 120,120" />
 		<text id="angle_text" x="150" y="150" text-anchor="middle" alignment-baseline="middle"></text>
 		<text id="direction_text" x="150" y="190" text-anchor="middle"></text>
 	</svg>
 
-	<div id="overlay">
+	<div class="msg" id="overlay">
 		Checking your device...
 	</div>
 
-	<div id="info">
-		<div id="info_content">
+	<div class="overlay dialog-cont">
+		<div id="info_dialog" class="dialog">
 			<div class="loader">
-				<div style="--anim-delay:0s;"></div>
-				<div style="--anim-delay:.2s;"></div>
-				<div style="--anim-delay:.5s;"></div>
+				<div style="--anim-delay:0"></div>
+				<div style="--anim-delay:.2s"></div>
+				<div style="--anim-delay:.5s"></div>
 			</div>
 		</div>
 	</div>

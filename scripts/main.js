@@ -1,40 +1,40 @@
-var preferred_theme = localStorage.getItem("compass-theme");
-if (preferred_theme === "dark") applyDarkTheme();
+import Dialog from "./dialog.js";
 
-function applyDarkTheme() {
+window.applyDarkTheme = () => {
 	document.body.setAttribute("data-theme", "dark");
-	theme_btn.querySelector("use").setAttribute("href", "icons/light.svg#content");
+	theme_btn.children[0].setAttribute("file", "light");
 }
-function applyLightTheme() {
+window.applyLightTheme = () => {
 	document.body.setAttribute("data-theme", "light");
-	theme_btn.querySelector("use").setAttribute("href", "icons/dark.svg#content");
+	theme_btn.children[0].setAttribute("file", "dark");
 }
-function toggleTheme() {
-	if (document.body.getAttribute("data-theme") == "dark") applyLightTheme();
-	else applyDarkTheme();
+window.toggleTheme = () => {
+	document.body.getAttribute("data-theme") == "dark" ? applyLightTheme() : applyDarkTheme();
 }
 
-function showInfo() {
-	info.style.display = "flex";
-	info.animate({ transform: ["translateY(-100vh)", "translateY(0)"] }, { duration: 500, fill: "forwards" });
-	let loader = info_content.querySelector(".loader");
-	if (loader !== null) {
-		fetch("info.html").then(response => response.text()).then(text => {
-			info_content.removeChild(loader);
-			info_content.attachShadow({ mode: "open" });
-			info_content.shadowRoot.innerHTML = text;
-		});
-	}
+const infoDialog = new Dialog(info_dialog);
+infoDialog.cancellable = true;
+
+window.showInfo = () => {
 	pauseMeasure();
+	infoDialog.open();
+	if (info_dialog.dataset.loaded) return;
+	fetch("info.html")
+		.then(response => response.text())
+		.then(text => {
+			info_dialog.children[0].remove();
+			info_dialog.innerHTML = text;
+		});
 }
-
-function hideInfo() {
-	let anim = info.animate({ transform: ["translateY(0)", "translateY(-100vh)"] }, { duration: 500, fill: "forwards" });
-	anim.onfinish = () => { info.style.display = "none"; };
+window.hideInfo = () => {
+	infoDialog.close();
 	startMeasure();
 }
 
-window.onbeforeunload = () => {
+var preferred_theme = localStorage.getItem("compass-theme");
+preferred_theme === "dark" ? applyDarkTheme() : applyLightTheme();
+
+window.addEventListener("beforeunload", () => {
 	let current_theme = document.body.getAttribute("data-theme");
 	if (current_theme !== preferred_theme) localStorage.setItem("compass-theme", current_theme);
-};
+});

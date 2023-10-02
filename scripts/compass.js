@@ -42,6 +42,7 @@ function rotateDial(angle) {
 
 function checkSupport(e) {
 	if (e.alpha != null && e.alpha != undefined) {
+		console.log("Hello")
 		//Sensor present
 		createMarks();
 		createDirections();
@@ -49,7 +50,7 @@ function checkSupport(e) {
 		compass.style.display = "initial";
 		startMeasure();
 		window.removeEventListener("deviceorientationabsolute", checkSupport);
-	} else overlay.innerHTML = "Your device does not have a magnetic sensor!";
+	} else overlay.innerHTML = "Your device does not have a magnetometer sensor!";
 }
 function measure(e) {
 	var angle = e.alpha ?? 0;

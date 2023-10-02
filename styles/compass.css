@@ -1,3 +1,8 @@
+#compass {
+	width: auto;
+	height: auto;
+}
+
 #major_marks_group line,
 #minor_marks_group line,
 #angle_texts_group text,
@@ -8,7 +13,7 @@
 
 #major_marks_group line,
 #minor_marks_group line {
-	stroke: var(--color-fg);
+	stroke: var(--fg);
 }
 
 #angle_texts_group text {
@@ -16,7 +21,7 @@
 }
 
 #compass text {
-	fill: var(--color-fg);
+	fill: var(--fg);
 }
 
 #direction_texts_group text {
