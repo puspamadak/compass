@@ -1,4 +1,5 @@
-<svg id="content" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="fill: none; stroke-width: 4; stroke-linecap: round;">
+<svg id="root" stroke="currentColor" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
+  style="fill: none; stroke-width: 4; stroke-linecap: round;">
   <circle style="stroke-width: 3.5;" cx="32" cy="32" r="12" />
   <path d="m 32,5 v 8.5" id="path1033" />
   <path d="m 51.091883,12.908117 -6.010408,6.010408" />
