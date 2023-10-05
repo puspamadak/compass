@@ -16,7 +16,6 @@ const infoDialog = new Dialog(info_dialog);
 infoDialog.cancellable = true;
 
 window.showInfo = () => {
-	pauseMeasure();
 	infoDialog.open();
 	if (info_dialog.dataset.loaded) return;
 	fetch("info.html")
@@ -26,10 +25,9 @@ window.showInfo = () => {
 			info_dialog.innerHTML = text;
 		});
 }
-window.hideInfo = () => {
-	infoDialog.close();
-	startMeasure();
-}
+window.hideInfo = () => infoDialog.close();
+infoDialog.onOpen = pauseMeasure;
+infoDialog.onClose = startMeasure;
 
 var preferred_theme = localStorage.getItem("compass-theme");
 preferred_theme === "dark" ? applyDarkTheme() : applyLightTheme();
