@@ -55,6 +55,7 @@ body[data-theme="dark"] {
 	width: 3em;
 	aspect-ratio: 1;
 	border-radius: 50%;
+	overflow: hidden;
 	transition: transform .2s;
 }
 
