@@ -31,6 +31,7 @@ class Dialog {
 		this.parent.animate(this.anim.props.parent.open, opts_p);
 		this.elem.animate(this.anim.props.dialog.open, opts_d);
 		setTimeout(() => this.opened = true, Math.max(opts_p.duration, opts_d.duration));
+		if (typeof this.onOpen == 'function') this.onOpen(this);
 	}
 	close() {
 		if (!this.opened) return;
@@ -41,6 +42,7 @@ class Dialog {
 		setTimeout(() => {
 			this.parent.classList.remove("open");
 			this.opened = false;
+			if (typeof this.onClose == 'function') this.onClose(this);
 		}, Math.max(this.opts_p.duration, this.opts_d.duration));
 	}
 	set cancellable(v) {
